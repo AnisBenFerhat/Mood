@@ -1,6 +1,10 @@
+import { auth } from '@clerk/nextjs'
 import Link from 'next/link'
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth()
+  let href = userId ? '/journal' : '/new-user'
+
   return (
     <div className='w-screen h-screen bg-gradient-to-br from-zinc-900 to-slate-800 flex justify-center items-center text-white'>
       <div className='w-full max-w-[800px] mx-auto'>
