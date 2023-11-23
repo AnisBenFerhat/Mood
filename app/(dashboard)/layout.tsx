@@ -1,3 +1,4 @@
+import { UserButton } from '@clerk/nextjs'
 import { ReactNode } from 'react'
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
@@ -6,9 +7,13 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
       <aside className='absolute w-[200px] top-0 left-0 h-full border-r border-white/50 '>
         Mood
       </aside>
-      <div className='ml-[200px]'>
-        <header className='h-[60px] border-b  border-white/50'>Hello</header>
-        <div>{children}</div>
+      <div className='ml-[200px] h-full]'>
+        <header className='h-[60px] border-b  border-white/50'>
+          <div className='h-full w-full px-6 flex items-center justify-end'>
+            <UserButton />
+          </div>
+        </header>
+        <div className='h-[calc(100vh-60px)]'>{children}</div>
       </div>
     </div>
   )
