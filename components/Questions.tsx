@@ -26,7 +26,7 @@ const Questions = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          className='border border-black/20 px-4 py-2 text-lg rounded-lg '
+          className='border border-black/20 px-4 py-2 text-lg rounded-lg text-black/80 '
           onChange={onChange}
           value={value}
           type='text'

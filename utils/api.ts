@@ -1,29 +1,48 @@
-const createURL = (path) => {
-  return window.location.origin + path
-}
+const createURL = (path) => window.location.origin + path
 
-export const updateEntry = async (id, content) => {
-  const response = await fetch(
-    new Request(createURL(`/api/journal/${id}`), {
-      method: 'PATCH',
-      body: JSON.stringify({ content }),
+export const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+export const deleteEntry = async (id) => {
+  const res = await fetch(
+    new Request(createURL(`/api/entry/${id}`), {
+      method: 'DELETE',
     }),
   )
-  if (response.ok) {
-    const data = await response.json()
-    return data.data
+
+  if (res.ok) {
+    return res.json()
+  } else {
+    throw new Error('Something went wrong on API server!')
   }
 }
 
-export const createNewEntry = async () => {
-  const response = await fetch(
-    new Request(createURL('/api/journal'), {
+export const newEntry = async () => {
+  const res = await fetch(
+    new Request(createURL('/api/entry'), {
       method: 'POST',
+      body: JSON.stringify({ content: 'new entry' }),
     }),
   )
-  if (response.ok) {
-    const data = await response.json()
-    return data.data
+
+  if (res.ok) {
+    return res.json()
+  } else {
+    throw new Error('Something went wrong on API server!')
+  }
+}
+
+export const updateEntry = async (id, updates) => {
+  const res = await fetch(
+    new Request(createURL(`/api/entry/${id}`), {
+      method: 'PATCH',
+      body: JSON.stringify({ updates }),
+    }),
+  )
+
+  if (res.ok) {
+    return res.json()
+  } else {
+    throw new Error('Something went wrong on API server!')
   }
 }
 
