@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 𝗠𝗢𝗢𝗗 : Journal Analysis Project
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project aims to create a journaling platform with integrated AI analysis for sentiment, mood, and content understanding. Users can write journal entries and receive insightful analysis about their writing.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **React**: JavaScript library for building user interfaces in web applications.
+- **TypeScript**: Adds static typing to JavaScript for better scalability and code maintenance.
+- **Tailwind CSS**: Utility-first CSS framework for styling web interfaces efficiently.
+- **Framer Motion**: Library for adding smooth animations to React components.
+- **React Hook Form**: Library for managing forms in React applications with ease.
+- **𝗖lerk/nextjs**: Provides authentication and user management for Next.js applications.
+- **𝗣risma/client**: Database client library for Prisma ORM to interact with the database.
+- **𝗟angchain**: Framework for language models, enabling natural language processing capabilities.
+- **𝗭od**: TypeScript-first schema declaration and validation library.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Sentiment Analysis
 
-## Learn More
+- 𝗦𝘁𝗼𝗿𝗲 sentiment scores for each journal entry.
+- Adds sentiment data to the database to visualize mood changes over time.
+- Utilizes charting libraries to plot sentiment values on the history page.
 
-To learn more about Next.js, take a look at the following resources:
+### AI Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Implements AI-powered analysis for journal entries.
+- Parses structured outputs and stores analysis data in the database.
+- Enhances user experience by providing mood and content insights.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Development
 
-## Deploy on Vercel
+To run this project locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the repository.
+2. Install dependencies using `pnpm install`.
+3. Start the development server using `pnpm dev`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the [License Name]. See the [LICENSE](link-to-license-file) file for details.
